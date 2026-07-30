@@ -1,0 +1,14 @@
+[Unit]
+Description=ngmastercabot - watcher (entrega de resultados de jobs)
+After=network.target
+
+[Service]
+Type=simple
+User=SEU_USUARIO
+WorkingDirectory=/caminho/para/telegram-assistente
+ExecStart=/caminho/para/telegram-assistente/.venv/bin/python -m delivery.run_watcher
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

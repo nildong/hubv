@@ -26,6 +26,12 @@ class Config:
     groq_language: str | None
     claude_model: str | None
     system_prompt: str
+    jobs_db_path: str
+    skills_config_path: str
+    worker_poll_interval_ms: int
+    job_lock_timeout_minutes: int
+    heartbeat_stale_minutes: int
+    accept_jobs_when_worker_offline: bool
 
 
 def load_config() -> Config:
@@ -51,4 +57,13 @@ def load_config() -> Config:
         groq_language=(os.getenv("GROQ_LANGUAGE", "").strip() or None),
         claude_model=(os.getenv("CLAUDE_MODEL", "").strip() or None),
         system_prompt=system_prompt,
+        jobs_db_path=os.getenv("JOBS_DB_PATH", "data/jobs.db").strip(),
+        skills_config_path=os.getenv("SKILLS_CONFIG_PATH", "config/skills.json").strip(),
+        worker_poll_interval_ms=int(os.getenv("WORKER_POLL_INTERVAL_MS", "3000")),
+        job_lock_timeout_minutes=int(os.getenv("JOB_LOCK_TIMEOUT_MINUTES", "30")),
+        heartbeat_stale_minutes=int(os.getenv("HEARTBEAT_STALE_MINUTES", "2")),
+        accept_jobs_when_worker_offline=os.getenv(
+            "ACCEPT_JOBS_WHEN_WORKER_OFFLINE", "true"
+        ).strip().lower()
+        not in ("false", "0", "no"),
     )
