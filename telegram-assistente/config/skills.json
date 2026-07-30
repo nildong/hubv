@@ -1,0 +1,20 @@
+{
+  "teste-fila": {
+    "queue": "servicos",
+    "description": "Skill de teste: aguarda alguns segundos e devolve o texto recebido em um arquivo.",
+    "enabled": true,
+    "requiredFields": ["texto"]
+  },
+  "roteiro": {
+    "queue": "textos",
+    "description": "Cria um roteiro de texto a partir de um tema (placeholder, sem geração real de IA ainda).",
+    "enabled": true,
+    "requiredFields": ["tema"]
+  },
+  "video-explicativo": {
+    "queue": "videos",
+    "description": "Cria um plano de vídeo explicativo a partir de um tema (placeholder, sem geração real de vídeo ainda).",
+    "enabled": true,
+    "requiredFields": ["tema"]
+  }
+}
