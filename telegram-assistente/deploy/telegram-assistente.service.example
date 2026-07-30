@@ -1,0 +1,14 @@
+[Unit]
+Description=Telegram Assistente Bot
+After=network.target
+
+[Service]
+Type=simple
+User=SEU_USUARIO
+WorkingDirectory=/caminho/para/telegram-assistente
+ExecStart=/caminho/para/telegram-assistente/.venv/bin/python bot.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
