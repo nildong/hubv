@@ -37,6 +37,9 @@ no Telegram                    O watcher detecta o job concluído e
 - Python 3.11+
 - [Claude Code](https://docs.claude.com/claude-code) instalado e logado com sua conta de assinatura
 - Conta na [Groq](https://console.groq.com) com uma API key
+- `ffmpeg` instalado no sistema (`sudo apt-get install -y ffmpeg`) — necessário para a skill
+  `transcricao-video`, já que `yt-dlp` usa `ffmpeg`/`ffprobe` para extrair o áudio da URL antes
+  de enviar para a Groq. Sem isso, a skill falha com "ffprobe and ffmpeg not found".
 
 ## 1. Criar o bot no BotFather
 
