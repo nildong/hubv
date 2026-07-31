@@ -16,5 +16,17 @@
     "description": "Cria um plano de vídeo explicativo a partir de um tema (placeholder, sem geração real de vídeo ainda).",
     "enabled": true,
     "requiredFields": ["tema"]
+  },
+  "transcricao-video": {
+    "queue": "textos",
+    "description": "Baixa o áudio de uma URL de vídeo/áudio e transcreve o conteúdo para texto usando a API da Groq (Whisper).",
+    "enabled": true,
+    "requiredFields": ["url"]
+  },
+  "criacao-site-blog": {
+    "queue": "servicos",
+    "description": "Gera a estrutura de arquivos de um site estático, landing page ou post de blog a partir de um tema, usando o Claude Code CLI como agente com ferramentas de arquivo habilitadas.",
+    "enabled": true,
+    "requiredFields": ["tema", "tipo"]
   }
 }
