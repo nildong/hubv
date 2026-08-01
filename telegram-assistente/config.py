@@ -24,6 +24,10 @@ class Config:
     groq_api_key: str
     groq_transcribe_model: str
     groq_language: str | None
+    groq_tts_model: str
+    groq_tts_voice: str
+    pexels_api_key: str | None
+    agnes_api_key: str | None
     claude_model: str | None
     system_prompt: str
     jobs_db_path: str
@@ -55,6 +59,10 @@ def load_config() -> Config:
         groq_api_key=groq_api_key,
         groq_transcribe_model=os.getenv("GROQ_TRANSCRIBE_MODEL", "whisper-large-v3").strip(),
         groq_language=(os.getenv("GROQ_LANGUAGE", "").strip() or None),
+        groq_tts_model=os.getenv("GROQ_TTS_MODEL", "canopylabs/orpheus-v1-english").strip(),
+        groq_tts_voice=os.getenv("GROQ_TTS_VOICE", "hannah").strip(),
+        pexels_api_key=(os.getenv("PEXELS_API_KEY", "").strip() or None),
+        agnes_api_key=(os.getenv("AGNES_API_KEY", "").strip() or None),
         claude_model=(os.getenv("CLAUDE_MODEL", "").strip() or None),
         system_prompt=system_prompt,
         jobs_db_path=os.getenv("JOBS_DB_PATH", "data/jobs.db").strip(),

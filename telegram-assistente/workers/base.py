@@ -69,6 +69,7 @@ class Worker:
         while True:
             job = self.repository.claim_next_job(self.queue, self.worker_id)
             if job is None:
+                self.recover_stale_locks()
                 self._beat("idle")
                 time.sleep(self.poll_interval_seconds)
                 continue

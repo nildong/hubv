@@ -6,6 +6,7 @@ from skills import (
     teste_fila,
     transcricao_video,
     video_explicativo,
+    video_historia,
 )
 
 SKILL_FUNCTIONS = {
@@ -14,4 +15,5 @@ SKILL_FUNCTIONS = {
     "video-explicativo": video_explicativo.run,
     "transcricao-video": transcricao_video.run,
     "criacao-site-blog": criacao_site_blog.run,
+    "video-historia": video_historia.run,
 }

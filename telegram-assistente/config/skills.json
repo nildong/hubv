@@ -13,9 +13,9 @@
   },
   "video-explicativo": {
     "queue": "videos",
-    "description": "Cria um plano de vídeo explicativo a partir de um tema (placeholder, sem geração real de vídeo ainda).",
+    "description": "Cria um vídeo explicativo real (narração + slides) a partir de um tema. O campo 'formato' deve ser 'horizontal' (16:9, ex.: YouTube) ou 'vertical' (9:16, ex.: Reels/Shorts/TikTok) conforme o pedido do usuário; se não for possível inferir, use 'horizontal'.",
     "enabled": true,
-    "requiredFields": ["tema"]
+    "requiredFields": ["tema", "formato"]
   },
   "transcricao-video": {
     "queue": "textos",
@@ -28,5 +28,11 @@
     "description": "Gera a estrutura de arquivos de um site estático, landing page ou post de blog a partir de um tema, usando o Claude Code CLI como agente com ferramentas de arquivo habilitadas.",
     "enabled": true,
     "requiredFields": ["tema", "tipo"]
+  },
+  "video-historia": {
+    "queue": "videos",
+    "description": "Transforma uma história/conto contado livremente pelo usuário em um filme animado narrado (imagens de personagens + cenas + clipes de vídeo interpolados + narração em português), usando a API Agnes AI. O campo 'historia' deve conter o texto completo da história, com personagens e enredo.",
+    "enabled": true,
+    "requiredFields": ["historia"]
   }
 }
